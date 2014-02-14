@@ -1,0 +1,236 @@
+/* CSS
+================================================== */ 
+
+*
+{
+    outline: 0;
+}
+
+html,body
+{
+    top: auto;
+}
+
+@media (max-width: 400px) {
+    #footPage{
+        color: black;
+        position: relative;
+    }
+}
+
+@media (min-width: 599px) {
+    #footPage {
+        background-image: url('../img/foot5b.png'); 
+        background-repeat: repeat-x; 
+        padding-top: 20px;
+        color: white;
+        position: relative;
+        height: 200px;
+    }
+}
+
+/*
+* Test sur tablette paysage (1024 x 768)
+* Affichage du logo InvestPorc
+*/
+@media (min-width: 10240px) and (max-width: 1280px) {
+    #iconIndex{
+        display: none;
+    }
+    
+    #masterCarousel{
+        display: none;
+    }
+}
+
+@media (max-width: 800px){
+    #masterCarousel{
+        display: none;
+    }
+}
+
+@media (min-width: 980px) { 
+    body{
+        top: auto;
+        margin-top: 130px;
+    }
+}
+
+#panelConnexion{
+    margin-top: 25px;
+}
+
+#wrap{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -200px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.push {
+    height: 200px; /* .push must be the same height as .footer */
+}
+
+#layoutIndex{
+    width: 700px; 
+    height: 416px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
+}
+
+#layoutCreation{
+    width: 320px;
+    margin-top: 25px;
+    margin-right: 25px;
+    padding-left: 15px;
+    padding-right: 10px;
+    background-color: rgba(255,255,255,0.95);
+    border: 1px solid #275524;
+    -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
+}
+
+#mailErreur404{
+    color: #b94a48;
+}
+
+#mailErreur404:hover{
+    color: #c09853;
+}
+
+#map{
+    -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+#informationContact{
+  background-color: #e5e5e5;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e5e5e5));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5);
+  background-image: linear-gradient(to bottom, #f2f2f2, #e5e5e5);
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+  background-repeat: repeat-x;
+  border-color: #e5e5e5 #e5e5e5 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0);
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 240px;
+  border: #6f6f6f ridge thin;
+}
+
+#calculContrat{
+  background-color: #e5e5e5;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e5e5e5));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5);
+  background-image: linear-gradient(to bottom, #f2f2f2, #e5e5e5);
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+  background-repeat: repeat-x;
+  border-color: #e5e5e5 #e5e5e5 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0);
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: #6f6f6f ridge thin;
+}
+
+.coin-slider { overflow: hidden; position: relative; }
+
+.cs-buttons { font-size: 0px; padding-top: 10px; }
+.cs-buttons a { margin-left: 5px; height: 10px; width: 10px; float: left; border: 1px solid #B8C4CF; color: #B8C4CF; text-indent: -1000px; }
+.cs-active { background-color: #B8C4CF; color: #FFFFFF; }
+
+.cs-title { width: 230px; padding: 10px; background-color: #000000; color: #FFFFFF; }
+
+.cs-prev, 
+.cs-next { background-color: #000000; color: #FFFFFF; padding: 0px 10px; }
+
+#contactform .input{
+    width: 280px;
+}
+
+#contactform #message{
+    width: 280px; 
+    max-width: 500px; 
+    min-height: 150px; 
+    min-width: 100px; 
+    max-height: 500px;
+}
+
+#modifNom, #modifEmail, #modifMotDePasse{
+    background-color: #e5e5e5;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-image: linear-gradient(to bottom, #f2f2f2, #e5e5e5);
+    background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-repeat: repeat-x;
+    border-color: #e5e5e5 #e5e5e5 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0);
+    -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+#infoCompte{
+    padding-top: 35px;
+}
+
+#imgCompte{
+    background-image: url('../img/cochonJournalMethode.png'); 
+    background-repeat: no-repeat; 
+    width: 200px;
+    height: 213px;
+}
+
+#footText{
+    padding-top: 40px;
+}
+
+#mailSite{
+    color: rgb(143, 186, 30);
+}
+
+#mailSite:hover{
+    color: rgb(241, 199, 33);
+}
+
+.error{
+    border: 1px solid #b94a48 !important;
+}
+
+.success{
+    border: 1px solid #468847 !important;
+}
+
+caption{ margin:10px 0 0 5px; padding:10px; text-align:left; background-color: red;}
+
+th{ background-color:#7BC624; padding:2px; border:1px solid #ccc; }
+
+/*====================================================
+	- classes des filtres
+	- éditer les classes ci-dessous pour changer le
+	style des <input> et du bouton "go" <a>
+=====================================================*/
+.flt{ 
+	background-color:#f4f4f4;
+	margin:0; width:100%;
+}
+.flt_s{
+	background-color:#f4f4f4; 
+	margin:0; width:90%;
+}

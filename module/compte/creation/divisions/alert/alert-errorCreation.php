@@ -1,0 +1,12 @@
+<!--Si formulaire non correctement rempli, alors erreur -->
+<div class="alert alert-error" id="Re_msgError">
+    <h4><img src="img/alert-error.png" alt="Error" style="border:none;" /> Attention!</h4>
+    <strong>Echec lors de l'inscription</strong>
+    <br/><br/>
+    Cette erreur peut être due à un échec de connexion à la base de données ou que votre adresse 
+    email est déjà utilisée dans le système. <br />Pour cela, retentez à nouveau votre manipulation, 
+    si l'erreur continue, faites nous part de cette erreur en envoyant l'adresse de la page 
+    et votre manipulation à l'adresse mail:
+    <u><A HREF="mailto:servais@cra.wallonie.be" id="mailErreur404" target="_blank">servais@cra.wallonie.be</a></u>
+</div>        
+<!-- Fin erreur -->

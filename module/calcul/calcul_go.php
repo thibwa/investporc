@@ -28,7 +28,7 @@
 
         <div class="span11">
                 <div>
-                    <?php include(''); ?>
+                    <?php include('module/calcul/buildCalcul.php'); ?>
                 </div>
             
             <div class="tabbable tabs-left">

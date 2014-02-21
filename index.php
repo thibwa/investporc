@@ -55,10 +55,10 @@
                         include 'errorAccess.php';
                         break;
                     case "erreur404":
-                        include 'error404.php';
+                        include 'module/error/error404.php';
                         break;
                     default:
-                        include 'error404.php';
+                        include 'module/error/error404.php';
                         break;
                 }
             } else

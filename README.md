@@ -14,3 +14,5 @@ Avant de débuter le calcul, nous vous conseillons de lire la page « Méthode �
 Le site a été conçu au départ des recherches effectuées au CRA-W sur le porc en plein air, des nombreuses visites réalisées en ferme et des données obtenues au travers des Centres de Référence et d’Expérimentation en production de porcs en plein air subventionnés par la DGARNE.
 
 Merci aux éleveurs de porcs qui ont partagé leurs données pour étayer ce travail et à Vincent Leroux, technicien au Centre d’économie Rurale de Marloie pour le temps consacré à la vérification des valeurs.
+
+<img src="img/CRA-W_LOGO_RVB.png" class="img-rounded" alt="CRA-W" style="border:none;">

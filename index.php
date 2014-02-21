@@ -52,7 +52,7 @@
                         include 'module/administration/statistique.php';
                         break;
                     case "errorAccess":
-                        include 'errorAccess.php';
+                        include 'module/error/errorAccess.php';
                         break;
                     case "erreur404":
                         include 'module/error/error404.php';

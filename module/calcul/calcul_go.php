@@ -10,7 +10,6 @@
     if($list == NULL)
         //Rapatriement de tous les objets de type Reponse
         $list = $controleur->getAllValueFormCalcul();
-    
 ?>
 
 <div class="container">
@@ -27,9 +26,9 @@
        </div>
 
         <div class="span11">
-                <div>
-                    <?php include('module/calcul/buildCalcul.php'); ?>
-                </div>
+            <div>
+                <?php include('module/calcul/buildCalcul.php'); ?>
+            </div>
             
             <div class="tabbable tabs-left">
                     <ul class="nav nav-tabs" id="tabMenuCalcul" style="position: fixed;">
@@ -61,20 +60,11 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabContentCalcul" style="margin-left: 120px;">
                             <?php
-                                if(isset($_GET["p3"]))
+                                if(isset($_GET["p3"]) == "resultat")
                                 {
-                                    switch ($_GET["p3"])
-                                    {
-                                        case "resultat":
-                                            ?>
-                                            <div id="bodyCalcul">
-                                            <?php
-                                                include 'module/calcul/divisions/resultat.php';
-                                            ?>
-                                            </div>
-                                            <?php
-                                            break;
-                                    }
+                                    echo '<div id="bodyCalcul">';
+                                    include 'module/calcul/divisions/resultat.php';
+                                    echo "</div>";
                                 }
                                 else
                                     include 'module/calcul/divisions/formulaire.php';

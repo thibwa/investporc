@@ -19,7 +19,7 @@
                         include 'module/calcul/calcul.php';
                         break;
                     case "formulaire":
-                        include 'module/calcul/calcul_go.php';
+                        include 'module/calcul/formulaire.php';
                         break;
                     case "methode":
                         include 'module/methode/methode.php';

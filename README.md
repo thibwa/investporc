@@ -1,5 +1,17 @@
 # Investporc <img src="img/investporc-logo.png" class="img-rounded" alt="InvestPorc" style="width:120px; height:70px; border:none;">
 
+[Releases](#releases)  
+[Informations](#informations)  
+
+## Releases
+### 1.0.1 
+This release fixes the important bug in formulas:
+•	Cout de l’aliment gestation trop faible : somgespx =SI(naissage="oui"; ((cjag*(365-(nbcy*(aps+7)))*pag*nbt)+(cjag*365*nbv*pag)))
+•	Cout annuel du cheptel: rac==SI(naissage="oui";(pat-prt)*(nbt*tauxrenouv/3);cte-(cte/dem)*nbcy)
+•	Résultat DIVers : Ajouter * nbcy: div==SI(naissage="oui";((cd+(nbia*cia*nbcy))*nbt);cde*nbpoe)
+
+
+## Informations
 ### <img src="img/cochoncoul02.png" alt=""> Analysez la viabilité de votre projet
 L'outil permet de calculer le montant des investissements à consentir pour votre projet et le revenu espéré de l'activité.
 

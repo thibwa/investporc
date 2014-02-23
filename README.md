@@ -7,7 +7,9 @@
 ### 1.0.1 
 This release fixes the important bug in formulas:
 •	Cout de l’aliment gestation trop faible : somgespx =SI(naissage="oui"; ((cjag*(365-(nbcy*(aps+7)))*pag*nbt)+(cjag*365*nbv*pag)))
+
 •	Cout annuel du cheptel: rac==SI(naissage="oui";(pat-prt)*(nbt*tauxrenouv/3);cte-(cte/dem)*nbcy)
+
 •	Résultat DIVers : Ajouter * nbcy: div==SI(naissage="oui";((cd+(nbia*cia*nbcy))*nbt);cde*nbpoe)
 
 

@@ -255,7 +255,7 @@ function somgespx($array)
     $ret = 0;
     
     if(getValue('naissage', $array) == 'Oui')
-        $ret = getValue('cjag', $array)*(365-(getValue('nbcy', $array)*(getValue('aps', $array)+7)))*getValue('pag', $array)*getValue('nbt', $array);
+        $ret = getValue('cjag', $array)*(365-(getValue('nbcy', $array)*(getValue('aps', $array)+7)))*getValue('pag', $array)*getValue('nbt', $array)+(getValue('nbv', $array)*365*getValue('pag', $array));
             
      return $ret;
 }

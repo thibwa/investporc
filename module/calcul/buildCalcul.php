@@ -17,7 +17,10 @@ if (isset($_GET["p2"])) {
             
             //Calcul du résultat économique
             $listResponse = Array();
-            $serv         = "http" . (($_SERVER["HTTPS"] == "on") ? 's' : '') . "://" . $_SERVER["SERVER_NAME"] . '/';
+
+
+            $serv         = "http" . (($_SERVER["HTTPS"] == "on") ? 's' : '') . "://" . $_SERVER["SERVER_NAME"] .$_SERVER['REQUEST_URI'];
+
             
             if ($controleur->chkSel($_POST['pu']) && $controleur->chkSel($_POST['ea']) && $controleur->chkSel($_POST['financement']) && $controleur->chkSel($_POST['commercialisation']) && $controleur->chkSel($_POST['naissage'])) {
                 //echo 'ok1';

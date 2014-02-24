@@ -1,5 +1,5 @@
 
-<form id="form-calcul-projet" method="post" action="index.php?p=formulaire&p2=calcul">
+<form id="form-calcul-projet" method="post" action="/TFE/index.php?p=formulaire&p2=calcul">
     
     <div idid="etape-1" style="">
         <legend>ETAPE 1 : Contexte</legend>

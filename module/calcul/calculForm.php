@@ -6,7 +6,7 @@
     }
             
     $listF = $controleur->getAllFixedValue();
-    
+
     if($list == NULL)
         //Rapatriement de tous les objets de type Reponse
         $list = $controleur->getAllValueFormCalcul();

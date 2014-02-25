@@ -573,10 +573,10 @@ function rbrap15($array, $arrayF){
 
 function getValue($initule_s, $array)
 {
-    foreach($array as &$o)
-        if($o->getIntitule() == $initule_s)  return $o->getValeur();
-
-    // Détruit la référence sur le dernier élément    
+    foreach($array as &$o){
+        if(($o->getIntitule()) == trim($initule_s))  return $o->getValeur();
+    }
+    // Détruit la référence sur le dernier élément
     unset($o);
 
      return 0;

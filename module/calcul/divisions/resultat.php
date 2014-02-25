@@ -1,7 +1,7 @@
 <?php
     require_once ('LogiqueApplicative/calcul/formules.php');  
     
-    $serv = "http".( ($_SERVER["HTTPS"] == "on")?'s':'' )."://".$_SERVER["SERVER_NAME"]."/";
+    $serv = "http".( ($_SERVER["HTTPS"] == "on")?'s':'' )."://".$_SERVER["SERVER_NAME"]."/TFE/";
     
     if(!$controleur->getAllReponseFormCalcul(session_id()))
         header("location: ". $serv."index.php?p=formulaire&p2=error");
@@ -141,6 +141,10 @@
              <td style="width: 84%;">Frais sanitaires</td>
              <td style="text-align: right;"><?php echo number_format(fsa($list,$listF),2,',','.'); ?> €</td>
          </tr>
+         <tr>
+              <td style="width: 84%;">Frais de vétérinaires</td>
+              <td style="text-align: right;"><?php echo number_format(fsa($list,$listF),2,',','.'); ?> €</td>
+          </tr>
          <tr>
              <td style="width: 84%;">Matériel agricole roulant</td>
              <td style="text-align: right;"><?php echo number_format(getValue('mar', $list),2,',','.'); ?> €</td>

@@ -311,10 +311,6 @@ function sommeBatiment(){
 
 function nbpeTheorique(){
     infoNbpe();
-    
-    document.getElementById('nbpe').value = 
-        Math.round((parseFloat(document.getElementById('nbt').value)*parseFloat(document.getElementById('nbps').value)*
-        (1-(parseFloat(document.getElementById('mse').value)/100)))/parseFloat(document.getElementById('nbcy').value));
 }
 
 function infoNbpe(){
@@ -330,8 +326,14 @@ function infoNbpe(){
             nb, false);
     }
     else {
-        bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement doit être supérieur ou égale à " + 
-            nb, true);
+        var nbpeCal =
+            Math.round((parseFloat(document.getElementById('nbt').value)*parseFloat(document.getElementById('nbps').value)*
+                (1-(parseFloat(document.getElementById('mse').value)/100)))/parseFloat(document.getElementById('nbcy').value));
+        if(document.getElementById('nbpe').value < nbpeCal){
+            document.getElementById('nbpe').value = nbpeCal;
+            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement doit être supérieur ou égale à " +
+                nb, true);
+        }
     }
 }
 

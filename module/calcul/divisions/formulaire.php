@@ -371,11 +371,12 @@
         
         <div style="margin-left: 50px;">
             <label class="control-label">
-                Nombre de places à l'engraisement (0 - 1500)
+                Nombre de places à l'engraissement (0 - 1500)
             </label>
             <input type=text size=3 name='nbpe' id="nbpe" value="<?php echo $controleur->getValue("nbpe",$list); ?>" 
-                   onchange="javascript:checkValue(this.value, 0, 1500);javascript:infoNbpe();" onkeyup="javascript:getNbse(); javascript:getSpape(); javascript:getMbne();
-                           if(document.getElementById('dpn').value == 'EPCF') javascript:nbpeTheorique();">
+                   onchange="javascript:checkValue(this.value, 0, 1500);javascript:infoNbpe();"
+                   onkeyup="javascript:getNbse(); javascript:getSpape(); javascript:getMbne();"
+                   onblur="if(document.getElementById('dpn').value == 'EPCF') javascript:nbpeTheorique();">
 
             <div class="alert alert-info" id="info_nbpe" style="display:none;">
                <div id="textError"></div>

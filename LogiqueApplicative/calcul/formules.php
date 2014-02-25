@@ -327,8 +327,8 @@ function somengpx($array, $arrayF)
             if(getValue('paf', $array) == 0)
                 return $nbpoe*getValue('nbcy', $array)*(getValue('pda', $array)-getValue('pdtpe', $arrayF))*$icde25a125*getValue('pac', $array);
             else
-                return $nbpoe*getValue('nbcy', $array)*(getValue('pdca', $arrayF)-getValue('pdtpe', $arrayF))*getValue('icmoins25', $arrayF)*getValue('paf', $array)+
-                $nbpoe*getValue('nbcy', $array)*(getValue('pda', $array)-getValue('pdca', $arrayF))*$icde25a125*getValue('pac', $array);
+                return $nbpoe*getValue('nbcy', $array)*(getValue('pdca', $arrayF)-getValue('pdtpe', $arrayF))*getValue('icmoins25', $arrayF)*getValue('pac', $array)+
+                $nbpoe*getValue('nbcy', $array)*(getValue('pda', $array)-getValue('pdca', $arrayF))*$icde25a125*getValue('paf', $array);
         }
         else if(getValue('paf', $array) == 0)
             return  $nbpoe*getValue('nbcy', $array)*(getValue('pda', $array)-getValue('pdtpe', $arrayF))*$icde25a125*getValue('pac', $array);

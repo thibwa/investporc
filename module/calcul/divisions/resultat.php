@@ -143,7 +143,7 @@
          </tr>
          <tr>
               <td style="width: 84%;">Frais de vétérinaires</td>
-              <td style="text-align: right;"><?php echo number_format(fsa($list,$listF),2,',','.'); ?> €</td>
+              <td style="text-align: right;"><?php echo number_format(fv($list,$listF),2,',','.'); ?> €</td>
           </tr>
          <tr>
              <td style="width: 84%;">Matériel agricole roulant</td>

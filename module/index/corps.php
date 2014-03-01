@@ -24,7 +24,7 @@
                     <div class="thumbnail">
                         <legend>
                             <img src="img/cochon-prof-coul02.png" alt=""/>
-                            Outils simple et complet
+                            Outil simple et complet
                         </legend>
 
                         <p style="font-size: 13px;">

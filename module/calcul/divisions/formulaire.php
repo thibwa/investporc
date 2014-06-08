@@ -1,4 +1,12 @@
-
+<?php
+    if($controleur->getAllReponseFormCalcul(session_id()) != null){
+        ?>
+            <div class="visible-desktop pull-right" style="margin-bottom: -40px;">
+                <img src="img/printer.png" id="printerForm" onclick="javascript:printDataProject()" title="Impression des données du projet" />
+            </div>
+        <?php
+    }
+?>
 <form id="form-calcul-projet" method="post" action="/TFE/index.php?p=formulaire&p2=calcul">
     
     <div idid="etape-1" style="">

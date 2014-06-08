@@ -51,6 +51,23 @@ function formSubmit(idForm)
     });
 }
 
+function printDataProject(){
+    //Cache les champs inutiles
+    document.getElementById("printerForm").style.display='none';
+    document.getElementById("headMenu").style.display='none';
+    document.getElementById("tabMenuCalcul").style.display='none';
+    document.getElementById("tabContentCalcul").style.marginLeft = 100;
+    document.getElementById('body').style.marginTop = 0;
+
+    window.print();
+
+    document.getElementById("printerForm").style.display='block';
+    document.getElementById("headMenu").style.display='block';
+    document.getElementById("tabMenuCalcul").style.display='block';
+    document.getElementById("tabContentCalcul").style.marginLeft = 120;
+    document.getElementById('body').style.marginTop = 120;
+}
+
 function printerResultat(){
    //Cache les champs inutiles
    document.getElementById("printerCalcul").style.display='none';

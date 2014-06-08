@@ -10,7 +10,7 @@
 ?>
 
 <div class="visible-desktop pull-right">
-    <img src="img/printer.png" id="printerCalcul" onclick="javascript:printerResultat()" title="Impression du rapport" />
+    <img src="img/printer.png" id="printerCalcul" onclick="javascript:printerResultat()" title="Impression du business plan" />
 </div>
 
 <br/>

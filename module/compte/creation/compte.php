@@ -6,7 +6,7 @@
                     include 'module/compte/creation/divisions/informationCreation.php';
                 ?>
             </div>
-            <div class="span4 pull-right">
+            <div class="span6 pull-right">
                 <?php
                     include 'module/compte/creation/divisions/formulaireCreation.php';
                 ?>

@@ -9,36 +9,30 @@
 </p>
 <br />
 <p class="lead">La feuille de résultat est structurée de la façon suivante :</p>
-<ul>
-    <li>
-        La synthèse des données encodées au cours des étapes sont présentées 
-        dans l'ordre. Des données complémentaires sont ajoutées comme le nombre 
-        de porcs engraissés par an ou la surface allouée aux animaux.
-    </li><br />
-    <li>
-        Deux graphiques illustrent la répartition des charges d'investissement 
-        et autres charges telles que l'alimentation, les annuités, le matériel 
-        roulant, les prairies, les frais de troupeau et les frais d'exploitation. 
-        Les frais de troupeau englobent les frais vétérinaires, sanitaires, 
-        de certification et les frais divers. Pour les frais d'exploitation, 
-        il s'agit du coût de la paille, de l'assurance, de l'électricité et de l'eau.
-    </li><br />
-    <li>
-        Le tableau qui suit expose les frais liés à l'installation reprenant 
-        le montant total du cheptel de départ , des bâtiments et des aménagements 
-        hors ceux relatifs aux bâtiments . La somme est alors reportée sous forme d'annuités.
-    </li><br />
-    <li>
-        Viennent ensuite les frais de fonctionnement qui comprennent les frais 
-        annuels de renouvellement du cheptel , d' alimentation , de paille , 
-        des prairies , d' eau , d' électricité , de certification , sanitaires, 
-        de vétérinaires , d'utilisation de matériel roulant et divers.
-    </li><br />
-    <li>
-        Une recette est calculée sur base des ventes d'animaux de production.
-    </li><br />
-    <li>
-        Pour terminer, le revenu dégagé est calculé par soustraction des recettes et des frais de fonctionnement .
-    </li>
-</ul>
-    
+<p>
+    <i class="icon-stop"></i> La synthèse des données encodées pour élaborer le projet.
+</p>
+<p>
+    <i class="icon-stop"></i> La synthèse du projet chiffré avec :
+    <blockquote>
+        <ul>
+            <li>Les investissements en cheptel de départ, en matériel d’hébergement hors bâtiments (clôtures, cabanes, ...), et en bâtiments ;</li>
+            <li>Le coût annuel de ces investissements sur chacune des durées d’amortissement ;</li>
+            <li>Les frais de fonctionnement qui comprennent les frais annuels de renouvellement
+                du cheptel en année 1 et années supérieures, d' alimentation, et les divers tels la paille , les prairies, l’ eau, l' électricité,
+                la certification,
+                les frais sanitaires, vétérinaires, l’utilisation du matériel agricole roulant, les assurances et les divers.</li>
+            <li>Les recettes annuelles calculées en années 1 et années suivantes sur base des ventes d'animaux de production ;</li>
+            <li>Les charges annuelles décomposées pour l’année 1, les années 2 à 7 puis 8 à 15 et ensuite supérieures à 15 pour intégrer les
+                2 durées d’amortissement et l’année de démarrage ;</li>
+            <li>Les charges annuelles décomposées pour l’année 1, les années 2 à 7 puis 8 à 15 et ensuite supérieures à 15 pour intégrer les 2
+                durées d’amortissement et l’année de démarrage ;</li>
+            <li>Les revenus annuels dégagés pour les périodes correspondantes ;</li>
+            <li>Deux graphiques qui illustrent la répartition des investissements, d’une part, et la
+                répartition des charges annuelles ( ? quelle période ??? précision à approtéer) ;</li>
+            <li>Et enfin, un troisième graphique présente le revenu annuel cumulé sur les 10
+                premières années. La partie en rouge souligne la durée nécessaire pour dégager un revenu cumulé positif.</li>
+        </ul>
+    </blockquote>
+</p>
+

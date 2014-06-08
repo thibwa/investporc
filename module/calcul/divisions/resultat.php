@@ -261,7 +261,7 @@ $list = $controleur->getAllReponseFormCalcul(session_id());
 <div class="hidden-phone">
     <legend>Répartition des investissements</legend>
     <div id="graph1" class="graph" style="width: 480px;height: 250px;"></div>
-    <legend>Répartition des charges</legend>
+    <legend>Répartition des charges pour les années 2 à 7</legend>
     <div id="graph2" class="graph" style="width: 480px;height: 250px;"></div>
     <legend>Revenus cumulés sur 10 ans</legend>
     <div id="graph3" class="graph" style="width: 700px;height: 350px;"></div>

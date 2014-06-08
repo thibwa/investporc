@@ -554,7 +554,7 @@
                 <p>Bâtiment 4 <input type=text name='mab4' id="mab4" size='6' onkeyup="javascript:sommeBatiment()" value="<?php echo $controleur->getValue("mab4",$list); ?>"> <span class='unit'>€</span></p>
                 <p>Bâtiment 5 <input type=text name='mab5' id="mab5" size='6' onkeyup="javascript:sommeBatiment()" value="<?php echo $controleur->getValue("mab5",$list); ?>"> <span class='unit'>€</span></p>
                 <hr>
-                <p>Total coût bâtiment <input type=text name='mab' id="mab" size='6' value="<?php echo $controleur->getValue("mab",$list); ?>"> <span class='unit'>€</span></p>
+                <p>Total coût bâtiment <input type=text name='mab' id="mab" size='6' value="<?php echo $controleur->getValue("mab",$list); ?>" readonly> <span class='unit'>€</span></p>
             </blockquote>
         </div>
     </div>

@@ -65,17 +65,26 @@ function nbtg($array)
 
 function ctt($array)
 {
-    return getValue('nbt', $array) * getValue('pat', $array);
+    if (getValue('naissage', $array) == 'Non')
+        return 0;
+    else
+        return getValue('nbt', $array) * getValue('pat', $array);
 }
 
 function ctv($array)
 {
-    return getValue('nbv', $array) * getValue('pav', $array);
+    if (getValue('naissage', $array) == 'Non')
+        return 0;
+    else
+        return getValue('nbv', $array) * getValue('pav', $array);
 }
 
 function cte($array)
 {
-    return getValue('nbpe', $array) * getValue('pvp', $array);
+    if (getValue('naissage', $array) == 'Oui')
+        return 0;
+    else
+        return getValue('nbpe', $array) * getValue('pvp', $array);
 }
 
 function ctd($array)

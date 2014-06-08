@@ -553,10 +553,9 @@
                 <p>Total coût véhicule <input type=text name='mar' id="mar" size='6' value="<?php  echo $controleur->getValue("mar",$list); ?>"> <span class='unit'>€</span></p>
 
                 <div class="alert alert-info">
-                    Vous pouvez calculer en vous aidant du module <a href="http://mecacost.cra.wallonie.be/index.php?page=7" id="MailSite" target="_blank">Mecacost</a>.
-                    Celui-ci est basé sur une méthode reconnue et des données fiables représentatives du marché .Il vous permet de calculer le coût
-                    d’utilisation prévisionnel total mais également par postes (consommation, entretien, réparation, amortissement, intérêts,
-                    assurances/taxes et main d’œuvre du matériel agricole). Le calcul peut être effectué pour une seule machine ou pour un chantier.
+                    Vous pouvez calculer en vous aidant du module <a href="http://mecacost.cra.wallonie.be/index.php?page=7" id="MailSite" target="_blank">Mecacost</a>
+                    qui permet de déterminer le coût d’utilisation prévisionnel total ou selon les différents postes (consommation,
+                    entretien, réparation, amortissement, intérêts, assurances/taxes et main d’œuvre du matériel agricole).
                 </div>
             </blockquote>
             <label class="control-label">

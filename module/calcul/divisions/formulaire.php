@@ -278,6 +278,7 @@
                 <small><em>Comment seront valorisés les porcelets après le sevrage?</em></small>
             </label>
             <select name='dpn' id="dpn"
+                    style="width: 400px !important;"
                     onchange = '
                     switch(this.value){
                         case "VTPE" :
@@ -290,11 +291,10 @@
                             document.getElementById("hpe").selectedIndex = 0;
                             document.getElementById("pe").selectedIndex = 0;
 							javascript:sommeBatiment(); javascript:sommeMar();
-
                             javascript:bascule("201-DIV-montant-batiment-neuf", null, false);
                             break;
                         case "VPPE" :
-                            javascript:bascule("14-DIV-engraissement-poids-vente-porcelets", null, true); 
+                            javascript:bascule("14-DIV-engraissement-poids-vente-porcelets", null, true);
                             javascript:bascule("hebergement-porcelets", null, true);
                             javascript:bascule("14-DIV-engraissement-poids-sevrage", null, false);
                             javascript:bascule("etape-4-generalite", null, false); 
@@ -304,7 +304,7 @@
                             break;
                         case "EPCF" :
                             javascript:bascule("14-DIV-engraissement-poids-vente-porcelets", null, false); 
-                            javascript:bascule("hebergement-porcelets", null, false); 
+                            javascript:bascule("hebergement-porcelets", null, true);
                             javascript:bascule("14-DIV-engraissement-poids-sevrage", null, true); 
                             javascript:bascule("etape-4-generalite", null, false); 
                             document.getElementById("ce").selectedIndex = 0;

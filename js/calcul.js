@@ -131,17 +131,25 @@ function getPvpa(){
         (parseInt(document.getElementById('spvppp').value)*(parseInt(document.getElementById('pdvpa').value)-10)));
 }
 
-//Calcul le Montant du bâtiment neuf porcelet avant la vente: mbnpav=SI(hpav<>2;0;cppb*nbps/nbcy*SI(ceb=4;(nbt/ceb)+1;(nbt/ceb)+1))
 function getMbnpav(){
-    ret = 0;
-    
-    if(document.getElementById('hpav').value == 'Bâtiment neuf')
-    {
-        ret = parseInt(document.getElementById('cppb').value)*parseInt(document.getElementById('nbps').value)/
-            parseInt(document.getElementById('nbcy').value)*_nbtm();
+    mbnpav = 0;
+    if(document.getElementById('dpn').value == 'VTPE'){
+        if(document.getElementById('hpav').value == 'Bâtiment neuf')
+        {
+            mbnpav = parseInt(document.getElementById('cppb').value)*parseInt(document.getElementById('nbps').value)/
+                parseInt(document.getElementById('nbcy').value)*_nbtm();
+        }
+    } else {
+        if(document.getElementById('hpav').value == 'Bâtiment neuf') {
+            engraissementPartie = 0.5;
+            if(document.getElementById('ceb').value != '4 bandes') {
+                engraissementPartie = 2/3;
+            }
+            mbnpav = parseInt(document.getElementById('cppb').value)*parseInt(document.getElementById('nbps').value)/
+                parseInt(document.getElementById('nbcy').value)*_nbtm()*engraissementPartie;
+        }
     }
-
-    document.getElementById('mbnpav').value = Math.round(ret*1000)/1000;
+    document.getElementById('mbnpav').value = Math.round(mbnpav*1000)/1000;
 }
 
 //Calcul le prix d'aliment de croissance : pac = Si (commercialisation="bio"; pacbio; pacpp) 

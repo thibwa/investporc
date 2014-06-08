@@ -641,7 +641,8 @@
             javascript:bascule("etape-3-engraissement", null, true);
             break;
         case "EPCF" :
-            javascript:bascule("14-DIV-engraissement-poids-sevrage", null, true); 
+            javascript:bascule("14-DIV-engraissement-poids-sevrage", null, true);
+            javascript:bascule("hebergement-porcelets", null, true);
             javascript:bascule("etape-3-engraissement", null, true);
             break;
     }

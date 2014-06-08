@@ -167,8 +167,7 @@ if (isset($_GET["p2"])) {
                                 header("location: " . $serv . "index.php?p=formulaire&p2=error");
                                 $b = false;
                             }
-                        
-                        
+
                         array_push($listResponse, (new Reponse('dpn', $_POST['dpn'])));
                         array_push($listResponse, (new Reponse('hpav', $_POST['hpav'])));
                         
@@ -236,6 +235,23 @@ if (isset($_GET["p2"])) {
                                     $b = false;
                                 }
                                 
+                                array_push($listResponse, (new Reponse('hpav', $_POST['hpav'])));
+                                break;
+                            case 'EPCF':
+                                if ($controleur->chkSel($_POST['hpav'])) {
+                                    if ($_POST['hpav'] == 'Bâtiment neuf') {
+                                        if (!is_nan($_POST['mbnpav']))
+                                            array_push($listResponse, (new Reponse('mbnpav', $_POST['mbnpav'])));
+                                        else {
+                                            header("location: " . $serv . "index.php?p=formulaire&p2=error");
+                                            $b = false;
+                                        }
+                                    }
+                                } else {
+                                    header("location: " . $serv . "index.php?p=formulaire&p2=error");
+                                    $b = false;
+                                }
+
                                 array_push($listResponse, (new Reponse('hpav', $_POST['hpav'])));
                                 break;
                         }

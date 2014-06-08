@@ -60,5 +60,5 @@
     le tatouage, … 
 </p>
 <p>
-    La simulation d'int&egrave;gre pas un éventuel salariat. 
+    La simulation n'int&egrave;gre pas un éventuel salariat.
 </p>

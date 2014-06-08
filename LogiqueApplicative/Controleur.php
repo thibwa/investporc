@@ -501,10 +501,10 @@
                                     <i class=\"icon-search icon-white\"></i></button></a>
                                 </td>
                                 </td><td style=\"text-align: center;\">
-                                    <a id=\"btnDesinscrire\" class=\"btn btn-danger btn-mini\" onClick=\"afficher_cacher('confirmDesinscrire'); afficher_cacher('btnDesinscrire'); return false;\">
+                                    <a id=\"btnDesinscrire".$i."\" class=\"btn btn-danger btn-mini\" onClick=\"afficher_cacher('confirmDesinscrire".$i."'); afficher_cacher('btnDesinscrire".$i."'); return false;\">
                                         <i class=\"icon-remove icon-white\"></i>
                                     </a>
-                                    <strong id=\"confirmDesinscrire\" style=\"visibility: hidden;\">
+                                    <strong id=\"confirmDesinscrire".$i."\" style=\"visibility: hidden;\">
                                         <a href=\"index.php?p=allUser&p2=".$listMembre[$i]->getEmail()."\" id=\"MailSite\">oui </a>|  <a href=\"index.php?p=allUser\" id=\"MailSite\"> non </a>
                                     </strong>
                                 </td>

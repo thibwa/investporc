@@ -44,7 +44,8 @@
         public function setSujet($Sujet) {
             $this->Sujet = $Sujet;
         }
-        
+
+        // TODO update body mail (ALPINISTES... + TFE)
         private function genererCorps(){
            $corps = "<div id=\"corps\"><p><h3><Strong>Bonjour ";
            $corps .= $this->MembreSrc->getNomPrenom()."</Strong></h3></p><p>".$this->Message."</p></div><div id=\"pied\"><p>Nous vous remercions de votre confiance.</p>";

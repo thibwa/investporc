@@ -148,6 +148,7 @@
                         $this->connexion->commit();
                         
                         $s = 'Pour réinitialiser votre adresse email: '.$m->getEmail();
+                        // TODO UPDATE LINK !!!
                         $s .= '<br/> Allez à cette adresse <a href=\"http://localhost/TFE/index.php?p=recover&email='.$fpwd->getMembre()->getEmail().'&key='.$fpwd->getKeygen();
                         $s .= '/>http://localhost/TFE/index.php?p=recover&email='.$fpwd->getMembre()->getEmail().'&key='.$fpwd->getKeygen().'</a>';
                         $s .= '<br /><br />Attention, cette adresse n\'est valide que 30 minutes, après quoi vous devrez recommencer votre manipulation ';

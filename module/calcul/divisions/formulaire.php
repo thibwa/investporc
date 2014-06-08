@@ -1,12 +1,13 @@
 <?php
     if($controleur->getAllReponseFormCalcul(session_id()) != null){
         ?>
-            <div class="visible-desktop pull-right" style="margin-bottom: -40px;">
+            <div class="visible-desktop pull-right" style="margin-bottom: -30px;">
                 <img src="img/printer.png" id="printerForm" onclick="javascript:printDataProject()" title="Impression des données du projet" />
             </div>
         <?php
     }
 ?>
+<!-- TODO remove TFE -->
 <form id="form-calcul-projet" method="post" action="/TFE/index.php?p=formulaire&p2=calcul">
     
     <div idid="etape-1" style="">
@@ -499,59 +500,65 @@
             </div>
 
             <label class="control-label">
-                Eau : <input id="ce" type=text size=3 name='ce' value="<?php echo $controleur->getValue("ce",$list); ?>">
+                Eau
             </label>
+
+            <blockquote>
+                <p>Prix de l'eau (€/m<sup>3</sup>): <input id="ce" type=text style="width: 50px !important;" size=3 name='ce' value="<?php echo $controleur->getValue("ce",$list); ?>"></p>
+            </blockquote>
 
             <label class="control-label">
-                Utilisation de véhicules agricoles
+                Utilisation de véhicules agricoles (ajuster les choix)
             </label>
-            <table class="table">
-                 <thead>
-                    <tr>
-                        <th>Choix</th>
-                        <th>Véhicule</th>
-                        <th>Temps annnuel (0h - 1000h)</th>
-                        <th>Coût horaire (2€ - 25€)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td><input type='checkbox' name='tracteur' id='tracteur' onclick="javascript:grise(this.checked,'ttp', 'tc');javascript:sommeMar();" <?php if($controleur->getValue("ttp",$list) != 0) echo 'checked=true'; ?>></td>
-                          <td>Tracteur</td>
-                          <td><input type=text size=3 name='ttp' id="ttp" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("ttp",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("ttp",$list) == 0) echo 'disabled=true'; ?>></td>
-                          <td><input type=text size=3 name='tc' id='tc' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("tc",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("ttp",$list) == 0) echo 'disabled=true'; ?>></td>
-                      </tr>
-                      <tr>
-                          <td><input type='checkbox' name='telescopique' id='telescopique' onclick="javascript:grise (this.checked,'ttep', 'tec');javascript:sommeMar();" <?php if($controleur->getValue("ttep",$list) != 0) echo 'checked=true'; ?>></td>
-                          <td>Téléscopique</td>
-                          <td><input type=text size=3 name='ttep' id="ttep" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("ttep",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("ttep",$list) == 0) echo 'disabled=true'; ?>></td>
-                          <td><input type=text size=3 name='tec' id='tec' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("tec",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("tec",$list) == 0) echo 'disabled=true'; ?>></td>
-                      </tr>
-                      <tr>
-                          <td><input type='checkbox' name='quad' id='quad' onclick="javascript:grise (this.checked,'qtp','qc');javascript:sommeMar();" <?php if($controleur->getValue("qtp",$list) != 0) echo 'checked=true'; ?>></td>
-                          <td>Quad</td>
-                          <td><input type=text size=3 name='qtp' id="qtp" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("qtp",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("qtp",$list) == 0) echo 'disabled=true'; ?>></td>
-                          <td><input type=text size=3 name='qc' id='qc' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("qc",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("qc",$list) == 0) echo 'disabled=true'; ?>></td>
-                      </tr>
 
-                      <tr>
-                          <td><input type='checkbox' name='autre1' id='autre' onclick="javascript:grise (this.checked,'atp','ac');javascript:sommeMar();" <?php if($controleur->getValue("atp",$list) != 0) echo 'checked=true'; ?>></td>
-                          <td>Autre</td>
-                          <td><input type=text size=3 name='atp' id="atp" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("atp",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("atp",$list) == 0) echo 'disabled=true'; ?>></td>
-                          <td><input type=text size=3 name='ac' id='ac' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("ac",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("ac",$list) == 0) echo 'disabled=true'; ?>></td>
-                      </tr>
-                  </tbody>
-            </table>
-            <hr>
-            <p>Total coût véhicule <input type=text name='mar' id="mar" size='6' value="<?php  echo $controleur->getValue("mar",$list); ?>"> <span class='unit'>€</span></p>
+            <blockquote>
+                <table class="table">
+                     <thead>
+                        <tr>
+                            <th>Choix</th>
+                            <th>Véhicule</th>
+                            <th>Temps annnuel (0h - 1000h)</th>
+                            <th>Coût horaire (2€ - 25€)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td><input type='checkbox' name='tracteur' id='tracteur' onclick="javascript:grise(this.checked,'ttp', 'tc');javascript:sommeMar();" <?php if($controleur->getValue("ttp",$list) != 0) echo 'checked=true'; ?>></td>
+                              <td>Tracteur</td>
+                              <td><input type=text size=3 name='ttp' id="ttp" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("ttp",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("ttp",$list) == 0) echo 'disabled=true'; ?>></td>
+                              <td><input type=text size=3 name='tc' id='tc' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("tc",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("ttp",$list) == 0) echo 'disabled=true'; ?>></td>
+                          </tr>
+                          <tr>
+                              <td><input type='checkbox' name='telescopique' id='telescopique' onclick="javascript:grise (this.checked,'ttep', 'tec');javascript:sommeMar();" <?php if($controleur->getValue("ttep",$list) != 0) echo 'checked=true'; ?>></td>
+                              <td>Téléscopique</td>
+                              <td><input type=text size=3 name='ttep' id="ttep" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("ttep",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("ttep",$list) == 0) echo 'disabled=true'; ?>></td>
+                              <td><input type=text size=3 name='tec' id='tec' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("tec",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("tec",$list) == 0) echo 'disabled=true'; ?>></td>
+                          </tr>
+                          <tr>
+                              <td><input type='checkbox' name='quad' id='quad' onclick="javascript:grise (this.checked,'qtp','qc');javascript:sommeMar();" <?php if($controleur->getValue("qtp",$list) != 0) echo 'checked=true'; ?>></td>
+                              <td>Quad</td>
+                              <td><input type=text size=3 name='qtp' id="qtp" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("qtp",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("qtp",$list) == 0) echo 'disabled=true'; ?>></td>
+                              <td><input type=text size=3 name='qc' id='qc' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("qc",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("qc",$list) == 0) echo 'disabled=true'; ?>></td>
+                          </tr>
 
-            <div class="alert alert-info">
-                Vous pouvez calculer en vous aidant du module <a href="http://mecacost.cra.wallonie.be/index.php?page=7" id="MailSite" target="_blank">Mecacost</a>. 
-                Celui-ci est basé sur une méthode reconnue et des données fiables représentatives du marché .Il vous permet de calculer le coût 
-                d’utilisation prévisionnel total mais également par postes (consommation, entretien, réparation, amortissement, intérêts, 
-                assurances/taxes et main d’œuvre du matériel agricole). Le calcul peut être effectué pour une seule machine ou pour un chantier.
-            </div>
+                          <tr>
+                              <td><input type='checkbox' name='autre1' id='autre' onclick="javascript:grise (this.checked,'atp','ac');javascript:sommeMar();" <?php if($controleur->getValue("atp",$list) != 0) echo 'checked=true'; ?>></td>
+                              <td>Autre</td>
+                              <td><input type=text size=3 name='atp' id="atp" onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("atp",$list); ?>" onchange="javascript:checkValue(this.value, 0, 1000)" <?php if($controleur->getValue("atp",$list) == 0) echo 'disabled=true'; ?>></td>
+                              <td><input type=text size=3 name='ac' id='ac' onkeyup="javascript:sommeMar()" value="<?php echo $controleur->getValue("ac",$list); ?>" onchange="javascript:checkValue(this.value, 2, 25)" <?php if($controleur->getValue("ac",$list) == 0) echo 'disabled=true'; ?>></td>
+                          </tr>
+                      </tbody>
+                </table>
+                <hr>
+                <p>Total coût véhicule <input type=text name='mar' id="mar" size='6' value="<?php  echo $controleur->getValue("mar",$list); ?>"> <span class='unit'>€</span></p>
 
+                <div class="alert alert-info">
+                    Vous pouvez calculer en vous aidant du module <a href="http://mecacost.cra.wallonie.be/index.php?page=7" id="MailSite" target="_blank">Mecacost</a>.
+                    Celui-ci est basé sur une méthode reconnue et des données fiables représentatives du marché .Il vous permet de calculer le coût
+                    d’utilisation prévisionnel total mais également par postes (consommation, entretien, réparation, amortissement, intérêts,
+                    assurances/taxes et main d’œuvre du matériel agricole). Le calcul peut être effectué pour une seule machine ou pour un chantier.
+                </div>
+            </blockquote>
             <label class="control-label">
                 Valeur actuelle d'autres bâtiments destinés à la spéculation porcine
             </label>

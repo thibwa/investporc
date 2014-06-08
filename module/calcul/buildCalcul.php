@@ -448,7 +448,9 @@ if (isset($_GET["p2"])) {
                     header("location: " . $serv . "index.php?p=formulaire&p2=error");
                     $b = false;
                 }
-                
+
+                array_push($listResponse, (new Reponse('tauxrenouv', $controleur->getValue("tauxrenouv",$list))));
+
                 $var = "";
                 
                 if ($controleur->user("email"))
@@ -456,7 +458,7 @@ if (isset($_GET["p2"])) {
                 
                 if (isset($_GET["p4"]))
                     $session_id_old = $_GET["p4"];
-                
+
                 if ($controleur->calculResultatEco($listResponse, $var, session_id(), $session_id_old) && $b)
                     header("location: " . $serv . "index.php?p=formulaire&p2=success&p3=resultat");
                 else

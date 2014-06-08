@@ -1,6 +1,10 @@
 <h5>Vincent Servais</h5>
 
-<i class="icon-envelope"></i> <A HREF="mailto:servais@cra.wallonie.be" target="_blank" style="font-size: 12px;">servais@cra.wallonie.be</a><br />
+<i class="icon-envelope"></i> <A HREF="mailto:v.servais@cra.wallonie.be" target="_blank" style="font-size: 12px;">v.servais@cra.wallonie.be</a><br />
+
+<h5>José Wavreille</h5>
+
+<i class="icon-envelope"></i> <A HREF="mailto:j.wavreille@cra.wallonie.be" target="_blank" style="font-size: 12px;">j.wavreille@cra.wallonie.be</a><br />
 <hr>
 <div style="font-size: 12px;">
     <h5>Centre wallon de Recherches agronomiques</h5>
@@ -13,7 +17,7 @@
     <i class="icon-map-marker"></i> <strong>CRA-W</strong><br />
     Rue de Liroux, 8<br />
     5030 Gembloux<br />
-    <abbr title="Téléphone">Tel:</abbr> +32 (0) 81 62 65 55
+    <abbr title="Téléphone">Tel:</abbr> +32 (0) 81 626.770
 </address>
 <a href="http://www.cra.wallonie.be" target="_blank" style="font-size: 12px;">http://www.cra.wallonie.be</a><br />
 

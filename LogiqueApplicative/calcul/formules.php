@@ -156,10 +156,10 @@ function caciav7($array, $arrayF)
     } else {
 
         if ((ctd($array) + $ahb) < getValue('fp', $array)) {
-            $res1 = (((ctd($array) + $ahb) * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF)))));
-
+            $res1 = ((ctd($array) + $ahb) * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF))));
         } else {
-            $res1 = (((ctd($array) + $ahb) - getValue('fp', $array)) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+            $res1 = ((getValue('fp', $array)*getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF)))) +
+                ((((ctd($array) + $ahb) - getValue('fp', $array)) * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
         }
     }
 
@@ -172,26 +172,19 @@ function caci15($array, $arrayF)
     $ahb = ahb($array, $arrayF);
 
     if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EEAP') {
-        $res2 = $cb * getValue('ti', $arrayF) / (1 - pow((1 + getValue('ti', $arrayF)), -getValue('deb', $arrayF)));
+        $res2 = ($cb * getValue('ti', $arrayF)) / (1 - pow((1 + getValue('ti', $arrayF)), -getValue('deb', $arrayF)));
     } else {
-        $res2 = $cb * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
+        $res2 = ($cb * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
 
     }
 
     if ((getValue('fp', $array) - $ahb) > $cb) {
-        if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EEAP') {
-            $res3 = $cb * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF)));
-
-        } else {
-            $res3 = $cb * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF)));
-
-        }
+        $res3 = ($cb * getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF)));
     } else {
-
         if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EEAP') {
-            $res4 = $cb - (getValue('fp', $array) - $ahb) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
+            $res4 = ($cb - (getValue('fp', $array) - $ahb)) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
         } else {
-            $res4 = $cb * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
+            $res4 = ($cb * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
         }
 
         $res3 = ((getValue('fp', $array) - $ahb) * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF)))) + $res4;
@@ -203,8 +196,7 @@ function caci15($array, $arrayF)
         if ($ahb < getValue('fp', $array)) {
             $res1 += $res3;
         } else {
-            $res1 = (getValue('fp', $array) * getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF))) +
-                ($cb * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF))));
+            $res1 = (($cb * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF))));
         }
     }
     return round($res1, 2);
@@ -217,17 +209,26 @@ function cacitot($array, $arrayF)
 
 function racan1($array)
 {
-    return cte($array);
+    if (getValue('naissage', $array) == 'Non')
+        return cte($array);
+    else
+        return 0;
 }
 
 function racan2Plus($array)
 {
-    return cte($array)*getValue('nbcy', $array);
+    if (getValue('naissage', $array) == 'Non')
+        return cte($array) * getValue('nbcy', $array);
+    else
+        return 0;
 }
 
 function rac($array)
 {
-    return (getValue('pat', $array) - getValue('prt', $array)) * getValue('nbt', $array) * getValue('tauxrenouv', $array)/100;
+    if (getValue('naissage', $array) == 'Oui')
+        return (getValue('pat', $array) - getValue('prt', $array)) * getValue('nbt', $array) * getValue('tauxrenouv', $array) / 100;
+    else
+        return 0;
 }
 
 function somlacpx($array)

@@ -9,10 +9,8 @@
 </p>
 <p>
     Merci aux éleveurs de porcs qui ont partagé leurs données pour étayer 
-    ce travail et à Vincent Leroux, technicien au Centre d’économie Rurale de 
-    Marloie pour le temps consacré à la vérification des valeurs. 
+    ce travail et à Amélie Turlot et Pierre Maquet pour leur expertise.
 </p>
 <p class="pull-right">
-    Une conception de <strong>Vincent Servais, José Wavreille, Amélie Turlot, 
-        Pierre Maquet et Nicole Bartiaux-Thill</strong>.
+    Une conception de <strong>Vincent Servais & José Wavreille</strong>
 </p>

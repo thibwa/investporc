@@ -39,7 +39,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="span3 hidden-phone" style="margin-top: 40px;">
+                <div class="span3 hidden-phone" style="margin-top: 10px;">
                     <table border="0">
                         <tr>
                             <td class="visible-desktop">
@@ -48,7 +48,18 @@
                             <td style="text-align: left; color: white; font-size: 13px">
                                 <strong>
                                     Vincent Servais<br />
-                                    <A HREF="mailto:servais@cra.wallonie.be" id="MailSite" target="_blank">servais@cra.wallonie.be</a>
+                                    <A HREF="mailto:v.servais@cra.wallonie.be" id="MailSite" target="_blank">v.servais@cra.wallonie.be</a>
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="visible-desktop">
+                                <img src="img/user.png" class="img-rounded" alt="Contact" style="border:none;" />
+                            </td>
+                            <td style="text-align: left; color: white; font-size: 13px">
+                                <strong>
+                                    José Wavreille<br />
+                                    <A HREF="mailto:j.wavreille@cra.wallonie.be" id="MailSite" target="_blank">j.wavreille@cra.wallonie.be</a>
                                 </strong>
                             </td>
                         </tr>
@@ -58,9 +69,10 @@
             <div class="row">
                 <div class="span12" style="text-align: center;">
                     <strong>
-                        <p>© 2011 CRAW , All Rights Reserved<br />
-                            Wavreille Thibaut : Création de site internet
-                            <a href="mailto:wavreille.thibaut@gmail.com" id="MailSite" target="_blank">wavreille.thibaut@gmail.com</a>
+                        <p>
+                            © Copyright 2012 CRA-W<br/>
+                            <a href="mailto:wavreille.thibaut@gmail.com" id="MailSite" target="_blank">Wavreille Thibaut</a><br/>
+                            <a href="http://www.thibautwavreille.be" id="MailSite" target="_blank">www.thibautwavreille.be</a>
                         </p>
                     </strong>
                 </div>

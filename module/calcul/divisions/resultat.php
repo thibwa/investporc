@@ -280,7 +280,7 @@ $list = $controleur->getAllReponseFormCalcul(session_id());
         { label: "Annuités pour investissement", data: <?php echo cacitot($list, $listF);?>},
         { label: "Matériels roulant", data: <?php echo getValue('mar', $list);?>},
         { label: "Prairie", data: <?php echo pra($list);?>},
-        { label: "Renouvellement du cheptel", data: <?php echo rac($list, $listF);?>},
+        { label: "Renouvellement du cheptel", data: <?php echo rac($list, $listF) + racan1($list) + racan2Plus($list);?>},
         { label: "Frais de troupeau", data: <?php echo (fv($list, $listF)+fsa($list, $listF)+fc($list, $listF)+div($list, $listF));?>},
         { label: "Frais d'eploitation", data: <?php echo (pai($list, $listF)+ass($list, $listF)+ele($list, $listF)+eau($list, $listF));?>}
     ];

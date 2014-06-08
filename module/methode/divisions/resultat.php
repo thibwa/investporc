@@ -29,7 +29,7 @@
                 durées d’amortissement et l’année de démarrage ;</li>
             <li>Les revenus annuels dégagés pour les périodes correspondantes ;</li>
             <li>Deux graphiques qui illustrent la répartition des investissements, d’une part, et la
-                répartition des charges annuelles ( ? quelle période ??? précision à approtéer) ;</li>
+                répartition des charges annuelles d'autre part ;</li>
             <li>Et enfin, un troisième graphique présente le revenu annuel cumulé sur les 10
                 premières années. La partie en rouge souligne la durée nécessaire pour dégager un revenu cumulé positif.</li>
         </ul>

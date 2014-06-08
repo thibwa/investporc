@@ -57,7 +57,7 @@
                         <?php } ?>
                     </ul>
             
-                    <div class="tab-content">
+                    <div class="tab-content" style="overflow: hidden !important;    ">
                         <div class="tab-pane active" id="tabContentCalcul" style="margin-left: 120px;">
                             <?php
                                 if(isset($_GET["p3"]) == "resultat")

@@ -7,7 +7,7 @@
                 Menu
             </a>
             <a class="brand" id="iconIndex" href="index.php">
-                <img src="img/investporc-logo.png" class="img-rounded" alt="InvestPorc" style="width:120px; height:70px; border:none;" />
+                <img src="img/investporc-logo-beta.png" class="img-rounded" alt="InvestPorc" style="width:120px; height:70px; border:none;" />
             </a>
             <div class="nav-collapse">
                 <ul class="menu nav nav-pills" id="filtre" style="margin-top: 18px;">

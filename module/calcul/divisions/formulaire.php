@@ -452,13 +452,13 @@
                         } 
                         else if(this.value == 'Non') { 
                             javascript:bascule('404-DIV-prairie-gestation', null, false);
-                            javascript:bascule('etape-4-generalite', null, true); 
+                            javascript:bascule('etape-4-generalite', null, true);
                         }
                         else { 
                             javascript:bascule('404-DIV-prairie-gestation', null, false); 
                             javascript:bascule('etape-4-generalite', null, false);
                             document.getElementById('ce').selectedIndex = 0;
-                        } javascript:getSpape(); javascript:sommeBatiment(); javascript:sommeMar();">
+                        } javascript:getSpape(); javascript:sommeBatiment(); javascript:sommeMar(); javascript:isAtLeastOneYesPrairieSelected();">
                     <option value='' <?php if(is_numeric($controleur->getValue("pe",$list))) echo 'selected="selected"'; ?>>[choisir]</option>
                     <option value='Oui' <?php if($controleur->getValue("pe",$list) == 'Oui') echo 'selected="selected"'; ?>>Oui</option>
                     <option value='Non' <?php if($controleur->getValue("pe",$list) == 'Non') echo 'selected="selected"'; ?>>Non</option>
@@ -474,19 +474,21 @@
 
     <div id='etape-4-generalite' style='display:none;'>
         <legend>ETAPE 4 : Généralités</legend>
-    
+
         <div style="margin-left: 50px;">
-            <label class="control-label">
-                <b>Prairies</b>
-            </label>
-            <blockquote>
-                <p>Coût du fermage par ha (€ / ha / an & 100 - 400) : <input id="cf" type=text size=3 name='cf' value="<?php echo $controleur->getValue("cf",$list); ?>" onchange="javascript:checkValue(this.value, 100, 400)"></p>
-                <p>Coût d'entretien des pâtures (€ / ha / an & 0 - 30) : <input id="cep" type=text size=3 name='cep' value="<?php echo $controleur->getValue("cep",$list); ?>" onchange="javascript:checkValue(this.value, 0, 30)"></p>
-                <p>Coût d'un mètre de clôture électrique et les piquets sont compris (€ /m & : 0.1 - 0.5) : <input id="cmce" type=text size=3 name='cmce' value="<?php echo $controleur->getValue("cmce",$list); ?>" onchange="javascript:checkValue(this.value, 0.1, 0.5)"></p>
-                <p>Coût d'un mètre de treillis et les piquets sont compris (€ /m & : 1 - 5) : <input id="cmt" type=text size=3 name='cmt' value="<?php echo $controleur->getValue("cmt",$list); ?>" onchange="javascript:checkValue(this.value, 1, 5)"></p>
-                <p>Longueur de clôture électrique (m) : <input id="lce" type=text size=6 name='lce' value="<?php echo $controleur->getValue("lce",$list); ?>"></p>
-                <p>Longueur de treillis (m) : <input id="lt" onkeyup="javascript:getLce()" type=text size=6 name='lt' value="<?php echo $controleur->getValue("lt",$list); ?>"></p>
-            </blockquote>
+            <div id="etape-4-prairie" style="display: none;">
+                <label class="control-label">
+                    <b>Prairies</b>
+                </label>
+                <blockquote>
+                    <p>Coût du fermage par ha (€ / ha / an & 100 - 400) : <input id="cf" type=text size=3 name='cf' value="<?php echo $controleur->getValue("cf",$list); ?>" onchange="javascript:checkValue(this.value, 100, 400)"></p>
+                    <p>Coût d'entretien des pâtures (€ / ha / an & 0 - 30) : <input id="cep" type=text size=3 name='cep' value="<?php echo $controleur->getValue("cep",$list); ?>" onchange="javascript:checkValue(this.value, 0, 30)"></p>
+                    <p>Coût d'un mètre de clôture électrique et les piquets sont compris (€ /m & : 0.1 - 0.5) : <input id="cmce" type=text size=3 name='cmce' value="<?php echo $controleur->getValue("cmce",$list); ?>" onchange="javascript:checkValue(this.value, 0.1, 0.5)"></p>
+                    <p>Coût d'un mètre de treillis et les piquets sont compris (€ /m & : 1 - 5) : <input id="cmt" type=text size=3 name='cmt' value="<?php echo $controleur->getValue("cmt",$list); ?>" onchange="javascript:checkValue(this.value, 1, 5)"></p>
+                    <p>Longueur de clôture électrique (m) : <input id="lce" type=text size=6 name='lce' value="<?php echo $controleur->getValue("lce",$list); ?>"></p>
+                    <p>Longueur de treillis (m) : <input id="lt" onkeyup="javascript:getLce()" type=text size=6 name='lt' value="<?php echo $controleur->getValue("lt",$list); ?>"></p>
+                </blockquote>
+            </div>
 
             <label class="control-label">
                 Eau : <input id="ce" type=text size=3 name='ce' value="<?php echo $controleur->getValue("ce",$list); ?>">

@@ -458,7 +458,7 @@ if (isset($_GET["p2"])) {
                     $session_id_old = $_GET["p4"];
                 
                 if ($controleur->calculResultatEco($listResponse, $var, session_id(), $session_id_old) && $b)
-                    header("location: " . $serv . "index.php?p=formulaire&p2=success");
+                    header("location: " . $serv . "index.php?p=formulaire&p2=success&p3=resultat");
                 else
                     header("location: " . $serv . "index.php?p=formulaire&p2=error");
             } else {

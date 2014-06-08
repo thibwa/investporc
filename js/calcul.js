@@ -319,10 +319,10 @@ function infoNbpe(){
     
     if(document.getElementById('dpn').value != 'EPCF'){
         if(document.getElementById('nbpe').value > nb)
-            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement doit être, théoriquement, inférieur ou égale à " + 
+            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement calculé en fonction du nombre introduit de truies doit théoriquement être inférieur ou égale à " +
                 nb, true);
         else
-            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement doit être, théoriquement, inférieur ou égale à " + 
+            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement calculé en fonction du nombre introduit de truies doit théoriquement être inférieur ou égale à " +
             nb, false);
     }
     else {
@@ -331,9 +331,21 @@ function infoNbpe(){
                 (1-(parseFloat(document.getElementById('mse').value)/100)))/parseFloat(document.getElementById('nbcy').value));
         if(document.getElementById('nbpe').value < nbpeCal){
             document.getElementById('nbpe').value = nbpeCal;
-            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement doit être supérieur ou égale à " +
+            bascule("info_nbpe", "<h4>Information !</h4>Le nombre de places à l'engraissement calculé en fonction du nombre introduit de truies doit être supérieur ou égale à " +
                 nb, true);
         }
     }
 }
 
+// Show etape-4-prairie if at least one answer (YES) is selected in one question about prairie
+function isAtLeastOneYesPrairieSelected(){
+    var isPrairieEngraissement = document.getElementById('pe').value;
+    var isPrairieGestation = document.getElementById('pg').value;
+    var isPrairieMaternite = document.getElementById('pm').value;
+    if(isPrairieEngraissement == 'Oui' || isPrairieGestation == 'Oui' || isPrairieMaternite == 'Oui'){
+        bascule('etape-4-prairie', null, true);
+    }
+    if(isPrairieEngraissement == 'Non' && isPrairieGestation == 'Non' && isPrairieMaternite == 'Non'){
+        bascule('etape-4-prairie', null, false);
+    }
+}

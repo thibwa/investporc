@@ -66,18 +66,6 @@
             <i><span id="Re_2erreurMotDePasse" class="help-inline"></span></i>
         </div>
         
-        <div>
-            <strong>Termes et Conditions</strong>
-            <p>
-                En acceptant les termes et conditions, vous certifiez que votre 
-                utilisation de toute information sur ce site est entièrement à 
-                vos risques. L'utilisation non autorisée de ce site web peut
-                donner lieu à une réclamation en dommages-intérêts et / ou 
-                constituer une infraction pénale.
-                <br />L'inscription constitue acceptant la politique ci-dessus.
-            </p>
-        </div>
-        
         <input value="S'inscrire" type="submit" id="Re_submitButton" class="btn btn-primary" title="Cliquez ici pour vous inscrire sur InvestPorc" /> 
         <input value="" id="Re_motDePasseHid" name="Re_motDePasseHid" type="hidden" />
     </fieldset>

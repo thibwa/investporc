@@ -3,12 +3,12 @@
         <div class="span12">
             <div class="span5">
                 <?php
-                    include 'module/compte/creation/divisions/formulaireCreation.php';
+                    include 'module/compte/creation/divisions/informationCreation.php';
                 ?>
             </div>
             <div class="span4 pull-right">
                 <?php
-                    include 'module/compte/creation/divisions/informationCreation.php';
+                    include 'module/compte/creation/divisions/formulaireCreation.php';
                 ?>
             </div>
         </div>

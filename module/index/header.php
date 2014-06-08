@@ -19,7 +19,8 @@
 <!-- Le javascript -->
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-<script type="text/javascript" src="js/jquery-ui-1.8.9.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script type="text/javascript" src="js/jstat/jquery.flot.js" ></script>
 <script type="text/javascript" src="js/jstat/jquery.flot.pie.js" ></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/jstat/excanvas.min.js"></script><![endif]-->

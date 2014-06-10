@@ -21,12 +21,11 @@
             <li>Les frais de fonctionnement qui comprennent les frais annuels de renouvellement
                 du cheptel en année 1 et années supérieures, d' alimentation, et les divers tels la paille , les prairies, l’ eau, l' électricité,
                 la certification,
-                les frais sanitaires, vétérinaires, l’utilisation du matériel agricole roulant, les assurances et les divers.</li>
-            <li>Les recettes annuelles calculées en années 1 et années suivantes sur base des ventes d'animaux de production ;</li>
+                les frais sanitaires, vétérinaires, l’utilisation du matériel agricole roulant, les assurances et les divers ;</li>
+            <li>Les recettes annuelles calculées en années 1 et années suivantes sur base des ventes d'animaux de production et les situations
+                encodées (engraissement seul ou circuit fermé) ;</li>
             <li>Les charges annuelles décomposées pour l’année 1, les années 2 à 7 puis 8 à 15 et ensuite supérieures à 15 pour intégrer les
                 2 durées d’amortissement et l’année de démarrage ;</li>
-            <li>Les charges annuelles décomposées pour l’année 1, les années 2 à 7 puis 8 à 15 et ensuite supérieures à 15 pour intégrer les 2
-                durées d’amortissement et l’année de démarrage ;</li>
             <li>Les revenus annuels dégagés pour les périodes correspondantes ;</li>
             <li>Deux graphiques qui illustrent la répartition des investissements, d’une part, et la
                 répartition des charges annuelles d'autre part ;</li>

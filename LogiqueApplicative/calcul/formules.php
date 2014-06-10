@@ -533,7 +533,11 @@ function vp($array)
 
 function rt1($array, $arrayF)
 {
-    return round(vp($array) / 52 * (52 - getValue('nbsvp', $arrayF)), 0);
+    $rt1 = round(vp($array) / 52 * (52 - getValue('nbsvp', $arrayF)), 0);
+    if (getValue('naissage', $array) == 'Non') {
+        $rt1 += vpg($array, $arrayF);
+    }
+    return $rt1;
 }
 
 function rtAp1($array, $arrayF)

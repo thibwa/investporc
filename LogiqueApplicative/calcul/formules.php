@@ -521,7 +521,7 @@ function rt($array, $arrayF)
 }
 
 function rt1($array, $arrayF){
-    return round(vp($array)/52*(52-getValue('nbsvp', $arrayF)),0);
+    return round(vpg($array)+(vp($array)/52*(52-getValue('nbsvp', $arrayF))),0);
 }
 
 function ch1($array, $arrayF){

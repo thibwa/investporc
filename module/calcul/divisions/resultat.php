@@ -1,7 +1,7 @@
 <?php
 require_once('LogiqueApplicative/calcul/formules.php');
 // TODO UPDATE LINK !!!
-$serv = "http" . (($_SERVER["HTTPS"] == "on") ? 's' : '') . "://" . $_SERVER["SERVER_NAME"] . "/TFE/";
+$serv = "http" . (($_SERVER["HTTPS"] == "on") ? 's' : '') . "://" . $_SERVER["SERVER_NAME"];
 
 if (!$controleur->getAllReponseFormCalcul(session_id()))
     header("location: " . $serv . "index.php?p=formulaire&p2=error");

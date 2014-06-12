@@ -2,6 +2,8 @@
 //$controleur->resetForm($controleur->user('email'),session_id());
 ?>
 
+<cms:template title='Calcul'/>
+
 <div class="container">
     <div class="row">
         <div class="span8">
@@ -30,23 +32,27 @@
         </div>
 
         <div class="span8" id="calculContrat">
-            <p><strong>A lire avant de commencer</strong></p>
+            <cms:editable name='methodepresentation' type='richtext'>
+                <p><strong>A lire avant de commencer</strong></p>
 
-            <p>Les résultats sont calculés sur base de données de terrain et des valeurs encodées par l'utilisateur. Ils
-                ne garantissent nullement la rentabilité finale du projet qui est dépendante de multiples facteurs
-                (conditions pédoclimatiques, conditions sanitaires, technicité de l'éleveur,… ).</p>
+                <p>Les résultats sont calculés sur base de données de terrain et des valeurs encodées par l'utilisateur.
+                    Ils
+                    ne garantissent nullement la rentabilité finale du projet qui est dépendante de multiples facteurs
+                    (conditions pédoclimatiques, conditions sanitaires, technicité de l'éleveur,… ).</p>
 
-            <p>Ils donnent une estimation des frais liés à l'installation, des frais de fonctionnement et du revenu
-                dégagé du projet étudié.</p>
+                <p>Ils donnent une estimation des frais liés à l'installation, des frais de fonctionnement et du revenu
+                    dégagé du projet étudié.</p>
 
-            <p>Le module de calcul permet d'apprécier l'influence de variations dans les valeurs encodées.</p>
+                <p>Le module de calcul permet d'apprécier l'influence de variations dans les valeurs encodées.</p>
 
-            <p>L'utilisateur est seul responsable des calculs effectués. Le CRA-W ne peut être tenu pour responsable de
-                l'utilisation de l'outil et de l'usage fait des résultats.</p>
+                <p>L'utilisateur est seul responsable des calculs effectués. Le CRA-W ne peut être tenu pour responsable
+                    de
+                    l'utilisation de l'outil et de l'usage fait des résultats.</p>
 
-            <p>Il est strictement interdit de copier, de modifier, ou de diffuser le site Web en tout ou en partie, sous
-                quelque forme que ce soit à moins d'avoir obtenu préalablement l'autorisation écrite du CRA-W.</p>
-
+                <p>Il est strictement interdit de copier, de modifier, ou de diffuser le site Web en tout ou en partie,
+                    sous
+                    quelque forme que ce soit à moins d'avoir obtenu préalablement l'autorisation écrite du CRA-W.</p>
+            </cms:editable>
             <br/>
             <a class="btn btn-primary visible-phone" type="button" href="index.php?p=formulaire">J'accepte</a>
             <br/>

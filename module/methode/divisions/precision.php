@@ -1,3 +1,4 @@
+<cms:editable name='methodetuyau' type='richtext'>
 <p>
     La durée d'amortissement est de 15 ans pour les bâtiments et 7 ans pour 
     les autres aménagements et les animaux lorsque c'est une exploitation 
@@ -62,3 +63,4 @@
 <p>
     La simulation n'int&egrave;gre pas un éventuel salariat.
 </p>
+</cms:editable>

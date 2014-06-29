@@ -94,6 +94,7 @@ function ctd($array)
 
 function ahb($array, $arrayF)
 {
+    $HG = getValue('hg', $array);
     $NBTM = nbtm($array);
     $NBTG = nbtg($array);
     $NBPOE = nbpoe($array);
@@ -103,14 +104,14 @@ function ahb($array, $arrayF)
     if (getValue('hm', $array) == 'Bâtiment existant' || getValue('hm', $array) == 'Bâtiment neuf') {
         $res2 = 0;
     } else {
-        $res2 = getValue('cpmc', $arrayF) * getValue('nbt', $array);
+        $res2 = getValue('cpmc', $arrayF) * $NBTM;
     }
 
     if (getValue('hm', $array)) {
         if ($HG == 'Bâtiment existant' || $HG == 'Bâtiment neuf') {
             $res3 = 0;
         } else {
-            $res3 = getValue('cpgc', $arrayF) * getValue('nbt', $array);
+            $res3 = getValue('cpgc', $arrayF) * $NBTG;
         }
     }
 
@@ -170,23 +171,13 @@ function caci15($array, $arrayF)
 {
     $cb = cb($array);
     $ahb = ahb($array, $arrayF);
-
-    if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EEAP') {
-        $res2 = ($cb * getValue('ti', $arrayF)) / (1 - pow((1 + getValue('ti', $arrayF)), -getValue('deb', $arrayF)));
-    } else {
-        $res2 = ($cb * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
-
-    }
+    $res1 = 0;
+    $res2 = ($cb * getValue('ti', $arrayF)) / (1 - pow((1 + getValue('ti', $arrayF)), -getValue('deb', $arrayF)));
 
     if ((getValue('fp', $array) - $ahb) > $cb) {
         $res3 = ($cb * getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF)));
     } else {
-        if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EEAP') {
-            $res4 = ($cb - (getValue('fp', $array) - $ahb)) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
-        } else {
-            $res4 = ($cb * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
-        }
-
+        $res4 = ($cb - (getValue('fp', $array) - $ahb)) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('deb', $arrayF)));
         $res3 = ((getValue('fp', $array) - $ahb) * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('deb', $arrayF)))) + $res4;
     }
 

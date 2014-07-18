@@ -3,23 +3,6 @@
 //Calcul le nombre de porcs en engraissement : nbpoe=SI(naissage="oui";SI(dpn="vtpe";0;SI(dpn="epcf";nbt*nbps/nbcy*(1-mse);nbpe));nbpe)
 function nbpoe($array)
 {
-    /*
-    $ret = 0;
-    
-    if(getValue('naissage', $array) == 'Non')
-         return $ret;
-    else if(getValue('dpn', $array) == 'VTPE')
-         return $ret;
-    else if(getValue('dpn', $array) == 'EPCF'){
-        $ret = getValue('nbt', $array) * getValue('nbps', $array) / 
-            getValue('nbcy', $array)*(1-getValue('mse', $array));
-    }
-    else
-        $ret = getValue('nbpe', $array);
-
-     return $ret;
-     */
-
     if (getValue('naissage', $array) == "Oui") {
         if (getValue('dpn', $array) == "VTPE") {
             return 0;
@@ -94,53 +77,39 @@ function ctd($array)
 
 function ahb($array, $arrayF)
 {
-    $HG = getValue('hg', $array);
     $NBTM = nbtm($array);
     $NBTG = nbtg($array);
     $NBPOE = nbpoe($array);
 
     $res1 = (getValue('lt', $array) * getValue('cmt', $array)) + (getValue('lce', $array) * getValue('cmce', $array));
 
-    if (getValue('hm', $array) == 'Bâtiment existant' || getValue('hm', $array) == 'Bâtiment neuf') {
-        $res2 = 0;
+    if (getValue('hm', $array) != "Cabanes") {
+        $res1 += 0;
     } else {
-        $res2 = getValue('cpmc', $arrayF) * $NBTM;
+        $res1 += (getValue('cpmc', $arrayF) * $NBTM);
     }
 
-    if (getValue('hm', $array)) {
-        if ($HG == 'Bâtiment existant' || $HG == 'Bâtiment neuf') {
-            $res3 = 0;
-        } else {
-            $res3 = getValue('cpgc', $arrayF) * $NBTG;
-        }
-    }
-
-    if (getValue('hpe', $array)) {
-        if (getValue('hpe', $array) == 'Bâtiment existant' || getValue('hpe', $array) == 'Bâtiment neuf') {
-            $res4 = 0;
-        } else {
-            $res4 = getValue('cpec', $arrayF) * $NBPOE;
-        }
-    }
-
-    if (getValue('ceb', $array) == "4 bandes") {
-        $res6 = (getValue('nbt', $array) / 4) + 1;
-    } elseif (getValue('ceb', $array) == "7 bandes") {
-        $res6 = (getValue('nbt', $array) / 7) + 1;
+    if (getValue('hg', $array) != "Cabanes") {
+        $res1 += 0;
     } else {
-        //$res6 = 1;
-        $res6 = 0;
+        $res1 += (getValue('cpgc', $arrayF) * $NBTG);
     }
 
-    if (getValue('hapv', $array) == 'Bâtiment existant' || getValue('hapv', $array) == 'Bâtiment neuf') {
-        $res5 = 0;
+    if (getValue('hpe', $array) != "Cabanes") {
+        $res1 += 0;
     } else {
-        $res5 = getValue('cppc', $arrayF) * getValue('nbps', $array) / getValue('nbcy', $array) * $res6;
+        $res1 += (getValue('cpec', $arrayF) * $NBPOE);
     }
 
-    $res7 = (getValue('nbse', $array) + getValue('nbslg', $array)) * getValue('cs', $array);
+    if (getValue('hapv', $array) != "Cabanes") {
+        $res1 += 0;
+    } else {
+        $res1 += (getValue('cppc', $arrayF) * getValue('nbps', $array) / getValue('nbcy', $array) * $NBTG);
+    }
 
-    return $res1 + $res2 + $res3 + $res4 + $res5 + $res7;
+    $res1 += (getValue('nbse', $array) + getValue('nbslg', $array)) * getValue('cs', $array);
+
+    return round($res1,2);
 }
 
 function cb($array)

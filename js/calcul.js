@@ -104,7 +104,7 @@ function getSpatm(){
 //Calcul le montant batiment neuf gestatiion mbnm =SI(hg<>2;0;cpgb*nbtg)
 function getMbng(){
     document.getElementById('mbng').value = Math.round((document.getElementById('hg').value == 'Bâtiment neuf' ? 
-        parseInt(document.getElementById('cpgb').value)*_nbtg() : 0)*1000)/1000;
+        parseInt(document.getElementById('cpgb').value)*_nbtg() : 0)*100)/100;
 }
 
 //Calcul surfarce de prairie gestation : spatg=SI(naissage="oui";SI(pg=non;0; (SI(ceb=4;nbt/4*3;nbt/7*4)/ntgha);0)

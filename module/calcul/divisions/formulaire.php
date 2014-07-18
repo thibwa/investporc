@@ -660,4 +660,6 @@
     }
     
     javascript:infoNbpe();
+
+    javascript:isAtLeastOneYesPrairieSelected();
 </script>

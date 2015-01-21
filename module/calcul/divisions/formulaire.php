@@ -219,7 +219,7 @@
             </label>
             <select name='pm' id="pm"
                     onchange="if(this.value == 'Oui') javascript:bascule('11-DIV-prairie-maternite', null, true); else { javascript:bascule('11-DIV-prairie-maternite', null, false);}
-                        javascript:getSpatm();">
+                        javascript:getSpatm();javascript:isAtLeastOneYesPrairieSelected();">
                     <option value='' <?php if(is_numeric($controleur->getValue("pm",$list))) echo 'selected="selected"'; ?>>[choisir]</option>
                     <option value='Oui' <?php if($controleur->getValue("pm",$list) == 'Oui') echo 'selected="selected"'; ?>>Oui</option>
                     <option value='Non' <?php if($controleur->getValue("pm",$list) == 'Non') echo 'selected="selected"'; ?>>Non</option>
@@ -262,7 +262,7 @@
             </label>
             <select name='pg' id="pg"
                     onchange="if(this.value == 'Oui') javascript:bascule('13-DIV-prairie-gestation', null, true); else { 
-                    javascript:bascule('13-DIV-prairie-gestation', null, false);} javascript:getSpatg();">
+                    javascript:bascule('13-DIV-prairie-gestation', null, false);} javascript:getSpatg(); javascript:isAtLeastOneYesPrairieSelected();">
                     <option value='' <?php if(is_numeric($controleur->getValue("pg",$list))) echo 'selected="selected"'; ?>>[choisir]</option>
                     <option value='Oui' <?php if($controleur->getValue("pg",$list) == 'Oui') echo 'selected="selected"'; ?>>Oui</option>
                     <option value='Non' <?php if($controleur->getValue("pg",$list) == 'Non') echo 'selected="selected"'; ?>>Non</option>
@@ -326,7 +326,7 @@
                             document.getElementById("pe").selectedIndex = 0;
                             document.getElementById("hpav").selectedIndex = 0;
                             break;
-                    }javascript:getCalcul_dpn(); javascript:getCalcul_com(); javascript:nbpeTheorique();'>
+                    }javascript:getCalcul_dpn(); javascript:getCalcul_com(); javascript:nbpeTheorique(); javascript:getLce()'>
                     <option value='' <?php if(is_numeric($controleur->getValue("dpn",$list))) echo 'selected="selected"'; ?>>[choisir]</option>
                     <option value='VTPE' <?php if($controleur->getValue("dpn",$list) == 'VTPE') echo 'selected="selected"'; ?>>Vente des porcelets (100%)</option>
                     <option value='VPPE' <?php if($controleur->getValue("dpn",$list) == 'VPPE') echo 'selected="selected"'; ?>>Engraissement d'une partie et vente des excédants</option>
@@ -467,7 +467,8 @@
                             javascript:bascule('404-DIV-prairie-gestation', null, false); 
                             javascript:bascule('etape-4-generalite', null, false);
                             document.getElementById('ce').selectedIndex = 0;
-                        } javascript:getSpape(); javascript:sommeBatiment(); javascript:sommeMar(); javascript:isAtLeastOneYesPrairieSelected();">
+                        } javascript:getSpape(); javascript:sommeBatiment(); javascript:sommeMar(); javascript:isAtLeastOneYesPrairieSelected(); 
+						javascript:getLce()">
                     <option value='' <?php if(is_numeric($controleur->getValue("pe",$list))) echo 'selected="selected"'; ?>>[choisir]</option>
                     <option value='Oui' <?php if($controleur->getValue("pe",$list) == 'Oui') echo 'selected="selected"'; ?>>Oui</option>
                     <option value='Non' <?php if($controleur->getValue("pe",$list) == 'Non') echo 'selected="selected"'; ?>>Non</option>
@@ -495,7 +496,7 @@
                     <p>Coût d'un mètre de clôture électrique et les piquets sont compris (€ /m & : 0.1 - 0.5) : <input id="cmce" type=text size=3 name='cmce' value="<?php echo $controleur->getValue("cmce",$list); ?>" onchange="javascript:checkValue(this.value, 0.1, 0.5)"></p>
                     <p>Coût d'un mètre de treillis et les piquets sont compris (€ /m & : 1 - 5) : <input id="cmt" type=text size=3 name='cmt' value="<?php echo $controleur->getValue("cmt",$list); ?>" onchange="javascript:checkValue(this.value, 1, 5)"></p>
                     <p>Longueur de clôture électrique (m) : <input id="lce" type=text size=6 name='lce' value="<?php echo $controleur->getValue("lce",$list); ?>"></p>
-                    <p>Longueur de treillis (m) : <input id="lt" onkeyup="javascript:getLce()" type=text size=6 name='lt' value="<?php echo $controleur->getValue("lt",$list); ?>"></p>
+                    <p>Longueur de treillis (m) : <input id="lt" type=text size=6 name='lt' value="<?php echo $controleur->getValue("lt",$list); ?>"></p>
                 </blockquote>
             </div>
 

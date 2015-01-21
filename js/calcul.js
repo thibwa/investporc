@@ -92,7 +92,7 @@ function getPase(){
 //Calcul le montant batiment neuf maternité mbnm =SI(hm<>2;0;cpmb*nbtm)
 function getMbnm(){
     document.getElementById('mbnm').value = Math.round((document.getElementById('hm').value == 'Bâtiment neuf' ?
-        parseInt(document.getElementById('cpmb').value)*_nbtm() : 0)*1000)/1000;
+        parseInt(document.getElementById('cpmb').value)*_nbtm() : 0)*100)/100;
 }
 
 //Calcul surfarce de prairie maternité : spatm=SI(naissage="oui";SI(pm=non;0; (SI(ceb=4;nbt/4;nbt/7*2)+1)*sptm);0)
@@ -149,7 +149,7 @@ function getMbnpav(){
                 parseInt(document.getElementById('nbcy').value)*_nbtm()*engraissementPartie;
         }
     }
-    document.getElementById('mbnpav').value = Math.round(mbnpav*1000)/1000;
+    document.getElementById('mbnpav').value = Math.round(mbnpav*100)/100;
 }
 
 //Calcul le prix d'aliment de croissance : pac = Si (commercialisation="bio"; pacbio; pacpp) 
@@ -242,7 +242,7 @@ function getNbse(){
 function getMbne(){
     nb = _nbpoe();
     document.getElementById('mbne').value = document.getElementById('hpe').value == 'Bâtiment neuf' ? 
-        Math.round((parseFloat(document.getElementById('cpeb').value)*nb)*1000)/1000 : 0;
+        Math.round((parseFloat(document.getElementById('cpeb').value)*nb)*100)/100 : 0;
 }
 
 //Calcul Surface de prairie en engraissement spape=SI(pe=oui;0;nbpoe/nbpc)

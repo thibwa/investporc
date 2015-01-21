@@ -108,7 +108,7 @@ function ahb($array, $arrayF)
     }
 
     $res1 += (getValue('nbse', $array) + getValue('nbslg', $array)) * getValue('cs', $array);
-
+    
     return round($res1,2);
 }
 
@@ -122,14 +122,27 @@ function caciav7($array, $arrayF)
     $ahb = ahb($array, $arrayF);
 
     if (getValue('financement', $array) == 'Emprunt') {
-        $res1 = ((ctd($array) + $ahb) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+		if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EESP' ) {
+			$res1 = ((ctd($array) + $ahb) * getValue('ti', $arrayF) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+		} else {
+			$res1 = $ahb * getValue('ti', $arrayF) / (1 - (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+		}
     } else {
 
         if ((ctd($array) + $ahb) < getValue('fp', $array)) {
-            $res1 = ((ctd($array) + $ahb) * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF))));
+			if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EESP' ) {
+				$res1 = ((ctd($array) + $ahb) * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF))));
+			} else {
+				$res1 = $ahb * getValue('icci', $arrayF) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF)));
+			}
         } else {
-            $res1 = ((getValue('fp', $array)*getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF)))) +
-                ((((ctd($array) + $ahb) - getValue('fp', $array)) * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+			if (getValue('ea', $array) == 'NE' || getValue('ea', $array) == 'EESP' ) {
+				$res1 = ((getValue('fp', $array) * getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF)))) +
+					((((ctd($array) + $ahb) - getValue('fp', $array)) * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+			} else {
+				$res1 = ((getValue('fp', $array) * getValue('icci', $arrayF)) / (1 - pow(1 + getValue('icci', $arrayF), -getValue('dem', $arrayF)))) +
+					((($ahb - getValue('fp', $array)) * getValue('ti', $arrayF)) / (1 - pow(1 + getValue('ti', $arrayF), -getValue('dem', $arrayF))));
+			}
         }
     }
 
@@ -215,35 +228,23 @@ function somgespx($array)
 function sompclpx($array, $arrayF)
 {
     $ret = 0;
+	$pase = 0;
     $nbpoe = nbpoe($array);
-
+	
+	if (getValue('commercialisation', $array) == 'Filière porc en plein air')
+		$pase = getValue('pasepp', $arrayF);
+	else
+		$pase = getValue('pasebio', $arrayF);
+		
     if (getValue('naissage', $array) == 'Oui') {
-        if (getValue('dpn', $array) == 'VPPE') {
-            $ret = getValue('nbps', $array) * getValue('nbt', $array) * getValue('icmoins25', $arrayF) * (getValue('pdvp', $array) - getValue('pdps', $array));
-
-            if (getValue('commercialisation', $array) == 'Filière porc en plein air')
-                $ret *= getValue('pasepp', $arrayF);
-            else
-                $ret *= getValue('pasebio', $arrayF);
-        } else if (getValue('dpn', $array) == 'VTPE') {
-            $ret = ((getValue('nbps', $array) * getValue('nbt', $array)) - ($nbpoe * getValue('nbcy', $array))) * getValue('icmoins25', $arrayF) *
-                (getValue('pdvp', $array) - getValue('pdps', $array));
-
-            if (getValue('commercialisation', $array) == 'Filière porc en plein air')
-                $ret *= getValue('pasepp', $arrayF);
-            else
-                $ret *= getValue('pasebio', $arrayF);
-
-            $ret += $nbpoe * getValue('nbcy', $array) * getValue('icmoins25', $arrayF) * (getValue('pdtpe', $arrayF) - getValue('pdps', $array));
-
-            if (getValue('commercialisation', $array) == 'Filière porc en plein air')
-                $ret *= getValue('pasepp', $arrayF);
-            else
-                $ret *= getValue('pasebio', $arrayF);
-
-            $ret += $nbpoe * getValue('nbcy', $array) * getValue('icmoins25', $arrayF) * (getValue('pdtpe', $arrayF) - getValue('pdps', $array));
-        } else
-            $ret = 0;
+        if (getValue('dpn', $array) == 'VTPE') {
+			$ret = getValue('nbps', $array) * getValue('nbt', $array) * getValue('icmoins25', $arrayF) * 
+			(getValue('pdvp', $array) - getValue('pdps', $array)) * $pase;
+        } else if (getValue('dpn', $array) == 'EPCF') {
+            $ret = getValue('nbps', $array) * getValue('nbt', $array) * getValue('icmoins25', $arrayF) * (getValue('pdtpe', $arrayF) - getValue('pdps', $array)) * $pase;
+        } else {
+            $ret = ((getValue('nbps', $array) * getValue('nbt', $array)) - ($nbpoe * getValue('nbcy', $array))) * getValue('icmoins25', $arrayF) * (getValue('pdvp', $array) - getValue('pdps', $array)) * $pase + $nbpoe * getValue('nbcy', $array) * getValue('icmoins25', $arrayF) * (getValue('pdtpe', $arrayF) - getValue('pdps', $array)) * $pase;
+		}
     }
 
     return $ret;

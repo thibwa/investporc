@@ -70,9 +70,8 @@
                 <div class="span12" style="text-align: center;">
                     <strong>
                         <p>
-                            © Copyright 2012 CRA-W<br/>
+                            © Copyright <?php echo date("Y"); ?> CRA-W<br/>
                             <a href="mailto:wavreille.thibaut@gmail.com" id="MailSite" target="_blank">Wavreille Thibaut</a><br/>
-                            <a href="http://www.thibautwavreille.be" id="MailSite" target="_blank">www.thibautwavreille.be</a>
                         </p>
                     </strong>
                 </div>

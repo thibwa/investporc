@@ -209,8 +209,9 @@ function somlacpx($array)
     $ret = 0;
 
     if (getValue('naissage', $array) == 'Oui')
-        $ret = getValue('cjal', $array) * getValue('aps', $array) * getValue('nbcy', $array) * getValue('pal', $array) * (getValue('nbt', $array)) +
-            getValue('cjag', $array) * getValue('nbcy', $array) * 7 * getValue('pal', $array) * getValue('nbt', $array);
+        $ret = (getValue('cjal', $array) * getValue('aps', $array) * getValue('nbcy', $array) * getValue('pal', $array) * (getValue('nbt', $array))) +
+            (getValue('cjag', $array) * getValue('nbcy', $array) * 7 * getValue('pal', $array) * getValue('nbt', $array)) +
+            ((getValue('cjag', $array) + 1) * getValue('nbcy', $array) * 7 * getValue('pal', $array) * getValue('nbt', $array));
 
     return $ret;
 }
@@ -220,7 +221,8 @@ function somgespx($array)
     $ret = 0;
 
     if (getValue('naissage', $array) == 'Oui')
-        $ret = getValue('cjag', $array) * (365 - (getValue('nbcy', $array) * (getValue('aps', $array) + 7))) * getValue('pag', $array) * getValue('nbt', $array) + (getValue('nbv', $array) * 365 * getValue('pag', $array));
+        $ret = getValue('cjag', $array) * (365 - (getValue('nbcy', $array) * (getValue('aps', $array) + 7 + 7))) * 
+			getValue('pag', $array) * getValue('nbt', $array) + (getValue('nbv', $array) * 365 * getValue('pag', $array) * getValue('cjag', $array));
 
     return $ret;
 }
@@ -228,13 +230,8 @@ function somgespx($array)
 function sompclpx($array, $arrayF)
 {
     $ret = 0;
-	$pase = 0;
+	$pase = getValue('pase', $array);
     $nbpoe = nbpoe($array);
-	
-	if (getValue('commercialisation', $array) == 'Filière porc en plein air')
-		$pase = getValue('pasepp', $arrayF);
-	else
-		$pase = getValue('pasebio', $arrayF);
 		
     if (getValue('naissage', $array) == 'Oui') {
         if (getValue('dpn', $array) == 'VTPE') {

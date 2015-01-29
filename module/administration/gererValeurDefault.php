@@ -36,7 +36,7 @@
                 <label class="control-label">
                     <b>* </b>Intitule <input id="intitule" name="intitule" style="width: 100px;" value="<?php if($val != NULL) echo $val->getIntitule() ?>" role="input" type="text" readonly="readonly" >
                     <b>* </b>Description <input id="description" name="description" style="width: 400px;" value="<?php if($val != NULL) echo $val->getDescription() ?>" role="input" type="text" >
-                    <b>* </b>Valeur <input id="valeur" name="valeur" style="width: 100px;" role="input" value="<?php if($val != NULL) echo $val->getValeur() ?>" type="number" >
+                    <b>* </b>Valeur <input id="valeur" name="valeur" style="width: 100px;" step="any" role="input" value="<?php if($val != NULL) echo $val->getValeur() ?>" type="number" >
                     <button class="btn btn-mini btn-info" type="submit"><i class="icon-pencil icon-white"></i></button>
                 </label>
             </form>

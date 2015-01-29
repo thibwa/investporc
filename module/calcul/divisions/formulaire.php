@@ -326,7 +326,7 @@
                             document.getElementById("pe").selectedIndex = 0;
                             document.getElementById("hpav").selectedIndex = 0;
                             break;
-                    }javascript:getCalcul_dpn(); javascript:getCalcul_com(); javascript:nbpeTheorique(); javascript:getLce()'>
+                    }javascript:getCalcul_dpn(); javascript:nbpeTheorique(); javascript:getLce()'>
                     <option value='' <?php if(is_numeric($controleur->getValue("dpn",$list))) echo 'selected="selected"'; ?>>[choisir]</option>
                     <option value='VTPE' <?php if($controleur->getValue("dpn",$list) == 'VTPE') echo 'selected="selected"'; ?>>Vente des porcelets (100%)</option>
                     <option value='VPPE' <?php if($controleur->getValue("dpn",$list) == 'VPPE') echo 'selected="selected"'; ?>>Engraissement d'une partie et vente des excédants</option>

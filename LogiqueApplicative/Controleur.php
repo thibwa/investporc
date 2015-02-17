@@ -728,7 +728,12 @@
                         foreach($array as &$o)
                         {
                             $o->setSession($sessionId);
-                            $this->daoReponse->create($o);
+							$exist = $this->daoReponse->find($o);
+							if($exist != NULL) {
+								$this->daoReponse->update($o);
+							} else {
+								$this->daoReponse->create($o);
+							}
                             $r = $this->daoReponse->find($o);
                             $this->daoBusinessPlan->create($m->getId(), $r->getId(), $key);
                         }

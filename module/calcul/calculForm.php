@@ -1,9 +1,7 @@
 <?php
-    if(isset($_GET["p4"]))
-    {
-        //Test si la session est dejà dans la base de données alors on charge les réponses
-        $list = $controleur->getAllReponseFormCalculByKey($_GET["p4"]);
-    }
+
+	//Test si la session est dejà dans la base de données alors on charge les réponses
+	$list = $controleur->getAllReponseFormCalculByKey(session_id());
             
     $listF = $controleur->getAllFixedValue();
 

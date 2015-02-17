@@ -1,10 +1,8 @@
 <?php
-    if(isset($_GET["p4"]))
-    {
-        //Test si la session est dejà dans la base de données alors on charge les réponses
-        $list = $controleur->getAllReponseFormCalculByKey($_GET["p4"]);
-    }
-            
+    
+    //Test si la session est dejà dans la base de données alors on charge les réponses
+    $list = $controleur->getAllReponseFormCalculByKey(session_id());
+    
     $listF = $controleur->getAllFixedValue();
     
     if($list == NULL)
@@ -210,7 +208,7 @@
                                         
                                         if(isset($_GET["p4"])) $session_id_old = $_GET["p4"];
                                         
-                                        if($controleur->calculResultatEco($listResponse, $var,session_id(), $session_id_old) && $b)
+                                        if($controleur->calculResultatEco($listResponse, $var, session_id(), $session_id_old) && $b)
                                             header("location: ". $serv."index.php?p=formulaire&p2=success");    
                                         else 
                                             header("location: ". $serv."index.php?p=formulaire&p2=error");

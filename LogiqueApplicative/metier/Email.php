@@ -69,6 +69,7 @@
             $mail_entete = "Sujet: ".$this->Sujet
                             .'From: '.$this->MembreSrc->getEmail()."\r\n"
                             .'Reply-To: '.$this->MembreSrc->getEmail()."\r\n"
+							.'MIME-Version: 1.0'."\r\n"
                             .'Content-type: text/html; charset=iso-8859-1"'
                             ."\r\nContent-Transfer-Encoding: 8bit\r\n"
                             .'X-Mailer:PHP/'.phpversion()."\r\n";

@@ -7,6 +7,22 @@
             $this->connect = $connect;
         }
 
+		function update($obj) {
+			try
+            {
+                $req = $this->connect->prepare('UPDATE invest_reponse SET reponse = :reponse WHERE intitule = :intitule AND session = :session');
+                $req->bindValue(':reponse', $obj->getValeur(), PDO::PARAM_STR);
+                $req->bindValue(':intitule', $obj->getIntitule(), PDO::PARAM_STR);
+                $req->bindValue(':session', $obj->getSession(), PDO::PARAM_STR);
+                
+                return ($req->execute());
+            } 
+            catch (PDOException $e) 
+            {
+               throw new PDOException($e->getMessage());
+            }
+		}
+		
         function create($obj)
         {
             try

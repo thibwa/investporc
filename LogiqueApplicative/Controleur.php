@@ -27,14 +27,6 @@
         private $daoReponse;
         private $daoBusinessPlan;
         //----------------------------------
-        private $PARAM_hote = 'mysql51-77.perso';
-        //private $PARAM_hote = 'localhost';
-        //private $PARAM_nom_bd = 'investporc_demo';
-        private $PARAM_nom_bd = 'alpinisto';
-        private $PARAM_utilisateur = 'alpinisto';
-        //private $PARAM_utilisateur = 'USR_investporc';
-        //private $PARAM_mot_passe = '93fg42as';
-        private $PARAM_mot_passe = 'HGMTQIKu';
 
         function __construct()
         {
